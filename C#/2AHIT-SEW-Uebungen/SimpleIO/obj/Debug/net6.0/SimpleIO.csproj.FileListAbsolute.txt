@@ -1,0 +1,14 @@
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\bin\Debug\net6.0\SimpleIO.exe
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\bin\Debug\net6.0\SimpleIO.deps.json
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\bin\Debug\net6.0\SimpleIO.runtimeconfig.json
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\bin\Debug\net6.0\SimpleIO.dll
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\bin\Debug\net6.0\SimpleIO.pdb
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\obj\Debug\net6.0\SimpleIO.GeneratedMSBuildEditorConfig.editorconfig
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\obj\Debug\net6.0\SimpleIO.AssemblyInfoInputs.cache
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\obj\Debug\net6.0\SimpleIO.AssemblyInfo.cs
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\obj\Debug\net6.0\SimpleIO.csproj.CoreCompileInputs.cache
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\obj\Debug\net6.0\SimpleIO.dll
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\obj\Debug\net6.0\refint\SimpleIO.dll
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\obj\Debug\net6.0\SimpleIO.pdb
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\obj\Debug\net6.0\SimpleIO.genruntimeconfig.cache
+C:\SEW\C#\2AHIT-SEW-Uebungen\SimpleIO\obj\Debug\net6.0\ref\SimpleIO.dll
