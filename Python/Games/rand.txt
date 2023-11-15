@@ -1,0 +1,223 @@
+from xml.dom import minidom
+from svg.path import parse_path
+
+doc = minidom.parse("stair.svg")
+for ipath, path in enumerate(doc.getElementsByTagName("path")):
+    print("Path", ipath)
+    d = path.getAttribute("d")
+    parsed = parse_path(d)
+    print("Objects:\n", parsed, "\n" + "-" * 20)
+    for obj in parsed:
+        print(
+            (
+                (round(obj.start.real, 3), round(obj.start.imag, 3)),
+                (round(obj.end.real, 3), round(obj.end.imag, 3)),
+            )
+        )
+    print("-" * 20)
+doc.unlink()
+
+pieces = [
+    [
+        Vector2(WIDTH / 2, 50),
+        Vector2(WIDTH / 2, 90),
+        Vector2(WIDTH / 2 - 40, 90),
+        Vector2(WIDTH / 2 - 40, 130),
+        Vector2(WIDTH / 2 + 80, 130),
+        Vector2(WIDTH / 2 + 80, 90),
+        Vector2(WIDTH / 2 + 40, 90),
+        Vector2(WIDTH / 2 + 40, 50),
+    ],  # T-Piece
+    [
+        Vector2(WIDTH / 2, 50),
+        Vector2(WIDTH / 2, 170),
+        Vector2(WIDTH / 2 + 30, 170),
+        Vector2(WIDTH / 2 + 30, 50),
+    ],  # Line-Piece
+    [
+        Vector2(WIDTH / 2 - 40, 50),
+        Vector2(WIDTH / 2 - 40, 130),
+        Vector2(WIDTH / 2 + 40, 130),
+        Vector2(WIDTH / 2 + 40, 50),
+    ],  # Square-Piece
+    [
+        Vector2(WIDTH / 2, 50),
+        Vector2(WIDTH / 2, 90),
+        Vector2(WIDTH / 2 - 40, 90),
+        Vector2(WIDTH / 2 - 40, 170),
+        Vector2(WIDTH / 2, 170),
+        Vector2(WIDTH / 2, 130),
+        Vector2(WIDTH / 2 + 40, 130),
+        Vector2(WIDTH / 2 + 40, 50),
+    ],  # S-Piece mirrored
+    [
+        Vector2(WIDTH / 2, 50),
+        Vector2(WIDTH / 2 - 40, 50),
+        Vector2(WIDTH / 2 - 40, 130),
+        Vector2(WIDTH / 2, 130),
+        Vector2(WIDTH / 2, 170),
+        Vector2(WIDTH / 2 + 40, 170),
+        Vector2(WIDTH / 2 + 40, 90),
+        Vector2(WIDTH / 2, 90),
+    ],  # S-Piece
+    [
+        Vector2(WIDTH / 2, 50),
+        Vector2(WIDTH / 2, 130),
+        Vector2(WIDTH / 2 - 40, 130),
+        Vector2(WIDTH / 2 - 40, 170),
+        Vector2(WIDTH / 2 + 40, 170),
+        Vector2(WIDTH / 2 + 40, 50),
+    ],  # L-Piece mirrored
+    [
+        Vector2(WIDTH / 2, 50),
+        Vector2(WIDTH / 2 - 40, 50),
+        Vector2(WIDTH / 2 - 40, 170),
+        Vector2(WIDTH / 2 + 40, 170),
+        Vector2(WIDTH / 2 + 40, 130),
+        Vector2(WIDTH / 2, 130),
+        Vector2(WIDTH / 2, 50),
+    ],  # L-Piece
+]
+
+pieces = [
+    [
+        [
+            Vector2(WIDTH / 2, 50),
+            Vector2(WIDTH / 2, 90),
+            Vector2(WIDTH / 2 - 40, 90),
+            Vector2(WIDTH / 2 - 40, 130),
+            Vector2(WIDTH / 2 + 80, 130),
+            Vector2(WIDTH / 2 + 80, 90),
+            Vector2(WIDTH / 2 + 40, 90),
+            Vector2(WIDTH / 2 + 40, 50),
+        ],  # rot 1
+        [],
+        [],
+        [],
+    ],  # T-Piece
+    [
+        [
+            Vector2(WIDTH / 2, 50),
+            Vector2(WIDTH / 2, 210),
+            Vector2(WIDTH / 2 + 40, 210),
+            Vector2(WIDTH / 2 + 40, 50),
+        ],
+        [],
+        [],
+        [],
+    ],  # Line-Piece
+    [
+        [
+            Vector2(WIDTH / 2 - 40, 50),
+            Vector2(WIDTH / 2 - 40, 130),
+            Vector2(WIDTH / 2 + 40, 130),
+            Vector2(WIDTH / 2 + 40, 50),
+        ],
+        [],
+        [],
+        [],
+    ],  # Square-Piece
+    [
+        [
+            Vector2(WIDTH / 2, 50),
+            Vector2(WIDTH / 2, 90),
+            Vector2(WIDTH / 2 - 40, 90),
+            Vector2(WIDTH / 2 - 40, 170),
+            Vector2(WIDTH / 2, 170),
+            Vector2(WIDTH / 2, 130),
+            Vector2(WIDTH / 2 + 40, 130),
+            Vector2(WIDTH / 2 + 40, 50),
+        ],
+        [],
+        [],
+        [],
+    ],  # S-Piece mirrored
+    [
+        [
+            Vector2(WIDTH / 2, 50),
+            Vector2(WIDTH / 2 - 40, 50),
+            Vector2(WIDTH / 2 - 40, 130),
+            Vector2(WIDTH / 2, 130),
+            Vector2(WIDTH / 2, 170),
+            Vector2(WIDTH / 2 + 40, 170),
+            Vector2(WIDTH / 2 + 40, 90),
+            Vector2(WIDTH / 2, 90),
+        ],
+        [],
+        [],
+        [],
+    ],  # S-Piece
+    [
+        [
+            Vector2(WIDTH / 2, 50),
+            Vector2(WIDTH / 2, 130),
+            Vector2(WIDTH / 2 - 40, 130),
+            Vector2(WIDTH / 2 - 40, 170),
+            Vector2(WIDTH / 2 + 40, 170),
+            Vector2(WIDTH / 2 + 40, 50),
+        ],
+        [],
+        [],
+        [],
+    ],  # L-Piece mirrored
+    [
+        [
+            Vector2(WIDTH / 2, 50),
+            Vector2(WIDTH / 2 - 40, 50),
+            Vector2(WIDTH / 2 - 40, 170),
+            Vector2(WIDTH / 2 + 40, 170),
+            Vector2(WIDTH / 2 + 40, 130),
+            Vector2(WIDTH / 2, 130),
+            Vector2(WIDTH / 2, 50),
+        ],
+        [],
+        [],
+        [],
+    ],  # L-Piece
+]
+if self.piece[n] == Shapes[i].piece[j]:
+                        self.points_overlap += 1
+                if self.points_overlap >= 2:
+                    self.at_bottom = True
+                    self.disabled = True
+            self.points_overlap = 0
+
+
+    if round(ball_cord[1],0) < paddle_B_cord[1] + 50 and not paddle_B_cord[1] <= 0:
+        paddle_B_cord[1] -= 20
+
+    if round(ball_cord[1],0) > paddle_B_cord[1] + 50 and not paddle_B_cord[1] >= HEIGHT - 100:
+        paddle_B_cord[1] += 20
+
+OG_Pos = [
+    [[3, 4, 5, 6], [5, 15, 25, 35]],  # Line-piece
+    [[13, 23, 24, 25], [3, 4, 5, 15], [4, 14, 24, 23], [4, 5, 24, 34]],  # J-Piece
+    [[5, 13, 14, 15], [4, 5, 6, 14], [4, 5, 15, 25], [4, 14, 24, 25]],  # L-Piece
+    [[4, 5, 13, 14], [4, 14, 15, 25]],  # S-piece
+    [[4, 13, 14, 15], [3, 4, 5, 14], [4, 13, 14, 24], [4, 14, 15, 24]],  # T-piece
+    [[3, 4, 14, 15], [5, 14, 15, 24]],  # Z-piece
+    [[4, 5, 14, 15]],
+]  # square-piece
+
+    
+    Shapes[-1].rot_pos += rot_direc
+
+    if Shapes[-1].rot_pos == -1:
+        Shapes[-1].rot_pos = 3
+    elif Shapes[-1].rot_pos == 4:
+        Shapes[-1].rot_pos = 0
+    
+    if rot_direc == 1:
+        for i in range(len(Shapes[-1].piece)):
+           Shapes[-1].piece[i] += rot_vars[Shapes[-1].index][Shapes[-1].rot_pos][i]
+
+    elif rot_direc == -1:
+        index = Shapes[-1].rot_pos - 1
+            
+        if index == -1:
+            index = 3
+        elif index == 4:
+            index = 0
+
+        for i in range(len(Shapes[-1].piece)):
+           Shapes[-1].piece[i] += rot_vars[Shapes[-1].index][Shapes[-1].rot_pos][i]  
