@@ -1,3 +1,3 @@
 # Practice-Projects
 
-Collection of differentprogramming excercises done in different programming languages.
+Collection of different programming excercises done in different programming languages.
